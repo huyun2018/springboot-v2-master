@@ -1,39 +1,34 @@
 package com.springboot.v2.chapter03.pojo;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component("user")
 public class User {
 
-	@Value("1")
-	private Long id;
-	@Value("user_name_1")
-	private String userName;
-	@Value("note_1")
-	private String note;
+    private Long id;
 
-	public Long getId() {
-		return id;
-	}
+    private String userName;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    private String note;
 
-	public String getUserName() {
-		return userName;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }
