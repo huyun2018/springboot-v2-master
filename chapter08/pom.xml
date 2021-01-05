@@ -11,6 +11,7 @@
     <groupId>com.springboot.v2.chapter08</groupId>
     <artifactId>chapter08</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>chapter08</name>
     <description>Demo project for Spring Boot</description>
 
@@ -21,7 +22,12 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -29,9 +35,48 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.39</version>
+        </dependency>
+
+
+
     </dependencies>
 
     <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.yml</include>-->
+<!--                    <include>**/*.properties</include>-->
+<!--                    <include>**/*.xml</include>-->
+<!--                </includes>-->
+<!--                <filtering>false</filtering>-->
+<!--            </resource>-->
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

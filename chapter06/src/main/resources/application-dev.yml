@@ -1,0 +1,50 @@
+server:
+  servlet:
+    context-path: /springboot
+  port: 8081
+
+
+spring:
+  application:
+    name: springboot
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_boot?useUnicode=true&characterEncoding=utf8&connectTimeout=100000&socketTimeout=300000&autoReconnect=true&userSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    tomcat:
+      max-idle: 10
+      max-active: 50
+      max-wait: 10000
+      initial-size: 5
+      #隔离级别数字配置的含义
+      #-1 数据库默认隔离级别
+      #1  未提交读
+      #2  读写提交
+      #4  可重复读
+      #8  串行化
+#      default-transaction-isolation: 2
+    #dbcp2数据库连接池默认隔离级别
+#    dbcp2:
+#      default-transaction-isolation: 2
+
+mybatis:
+  #MyBatis映射文件统配
+  mapper-locations: classpath:com/springboot/v2/chapter06/mapper/*.xml
+  #MyBatis扫描别名包，和注解@Alias联用
+  type-aliases-package: com.springboot.v2.chapter06.pojo
+
+#日志配置
+  #logging.level.root=DEBUG
+  #logging.level.org.springframework=DEBUG
+logging:
+  level:
+    root: DEBUG
+    org:
+#      springframework: DEBUG
+      mybatis: DEBUG
+    com:
+      springboot:
+        v2:
+          chapter06:
+            dao: DEBUG
